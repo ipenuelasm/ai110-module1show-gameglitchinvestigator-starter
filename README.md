@@ -25,13 +25,13 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] Describe the game's purpose: A simple guessing game where you try to guess a secret number.
+- [x] Detail which bugs you found: Text ranges were hardcoded, new game button froze the UI, backwards hints, even attempts broke string conversion logic.
+- [x] Explain what fixes you applied: Refactored logic to utils, removed string conversion logic, updated new game Session state resets, fixed hint text.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [x] The game works properly now after the fixes were applied.
 
 ## 🚀 Stretch Features
 

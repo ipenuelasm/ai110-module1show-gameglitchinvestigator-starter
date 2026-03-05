@@ -10,31 +10,26 @@ When I first ran it the game looked like a standard streamlit app with a sidebar
 
 ## 2. How did you use AI as a teammate?
 
-I basically just used copilot inline chat to fix the file and occasionally checked chat.
-Copilot got the fix right for the new game button freezing by telling me to reset the other session variables and use the low/high vars instead of 1 and 100. I tested it and it worked without me refreshing the page.
-An incorrect suggestion was when I asked copilot agent to fix the hint logic and instead of just swapping the string text it tried to add a bunch of weird logic to make it print the strings conditionally. I just discarded it and changed the strings manually.
+I used my gemini ai account since it is free for students and basically unlimited.
+Gemini got the fix right for the new game button freezing by telling me to reset the other session variables and use the low/high vars instead of 1 and 100. I tested it and it worked without me refreshing the page.
+An incorrect suggestion was when I asked gemini to fix the hint logic and instead of just swapping the string text it tried to add a bunch of weird logic to make it print the strings conditionally. I just discarded it and changed the strings manually.
 
 ---
 
 ## 3. Debugging and testing your fixes
 
 I knew my stuff was fixed when I just played the game and saw the bugs I found were gone. 
-I ran pytest tests/test_game_logic.py after copilot fixed the check guess test. It basically showed that putting in 60 on a 50 secret gave "Too High" which proved that the hint reversed bug was gone. 
-AI didn't really help design the tests I just told it to fix the starter code tests which were broken because they were made to check strings but the function returns a tuple.
+I ran pytest tests/test_game_logic.py after gemini fixed the check guess test. It basically showed that putting in 60 on a 50 secret gave "Too High" which proved that the hint reversed bug was gone. 
+AI didn't really help design the tests I just told it to fix the starter code tests which were broken.
 
 ---
 
 ## 4. What did you learn about Streamlit and state?
 
-- In your own words, explain why the secret number kept changing in the original app.
-- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-- What change did you make that finally gave the game a stable secret number?
+The secret number kept getting messed up because it was converting back and forth between strings and ints on even attempts which broke all the logic. Streamlit basically reruns the whole python script every single time you click a button or type something so if you don't use session state variables your stuff just resets every time. I just removed the weird even attempt string conversion and made sure the new game button actually resets the status state to playing so it doesn't stay frozen.
 
 ---
 
 ## 5. Looking ahead: your developer habits
 
-- What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
-- What is one thing you would do differently next time you work with AI on a coding task?
-- In one or two sentences, describe how this project changed the way you think about AI generated code.
+I'll probably use gemini inline chat more since it's faster than opening a new tab and typing it all out. Next time I'll make sure to double check the code the AI gives me since it can be pretty dumb sometimes and try to overcomplicate things. It showed me that AI code is a good starting point but you still have to verify it yourself because it makes obvious mistakes.
