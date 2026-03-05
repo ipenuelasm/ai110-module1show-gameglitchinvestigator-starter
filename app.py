@@ -70,7 +70,7 @@ with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
 if new_game:
-    # FIX: Used Agent mode to fix new game bounds and resetting UI variables properly
+    # FIX: Used Gemini to fix new game bounds and resetting UI variables properly
     st.session_state.attempts = 0
     st.session_state.secret = random.randint(low, high)
     st.session_state.score = 0

@@ -1,6 +1,6 @@
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
-    # FIX: Refactored logic into logic_utils.py using Copilot Agent mode.
+    # FIX: Refactored logic into logic_utils.py using Gemini.
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
@@ -34,7 +34,7 @@ def check_guess(guess, secret):
 
     outcome examples: "Win", "Too High", "Too Low"
     """
-    # FIX: Fixed backwards hints and refactored logic via Copilot Agent mode.
+    # FIX: Fixed backwards hints and refactored logic via Gemini.
     if guess == secret:
         return "Win", "🎉 Correct!"
     if guess > secret:
@@ -44,7 +44,7 @@ def check_guess(guess, secret):
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
     """Update score based on outcome and attempt number."""
-    # FIX: Fixed scoring issue on even attempts using Copilot Inline chat
+    # FIX: Fixed scoring issue on even attempts using Gemini inline chat.
     if outcome == "Win":
         points = max(10, 100 - 10 * (attempt_number + 1))
         return current_score + points
